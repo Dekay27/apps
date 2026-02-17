@@ -27,9 +27,8 @@ class SmsService
             $payload['schedule'] = $schedule;
         }
 
-        $response = Http::asForm()
-            ->retry(3, 200)
-            ->post($baseUrl, $payload);
+        $response = Http::retry(3, 200, null, false)
+            ->get($baseUrl, $payload);
 
         $result = [
             'status' => $response->status(),

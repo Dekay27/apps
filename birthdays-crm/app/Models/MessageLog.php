@@ -25,4 +25,9 @@ class MessageLog extends Model
     {
         return $this->belongsTo(Contact::class);
     }
+
+    public function getSentStatusAttribute(): string
+    {
+        return $this->status === 'sent' ? 'Sent' : ucfirst($this->status);
+    }
 }

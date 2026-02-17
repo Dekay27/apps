@@ -41,6 +41,14 @@
                             </div>
                             <span class="simple-action">Open</span>
                         </a>
+
+                        <a href="{{ route('messages.index') }}" class="simple-card">
+                            <div>
+                                <h2>Message Logs</h2>
+                                <p>Review all sent messages with status and time.</p>
+                            </div>
+                            <span class="simple-action">Open</span>
+                        </a>
                     </div>
                 </div>
             </div>

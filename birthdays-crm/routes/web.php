@@ -3,6 +3,7 @@
 use App\Http\Controllers\BirthdayController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ContactImportController;
+use App\Http\Controllers\MessageLogController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SettingsController;
@@ -30,6 +31,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/contacts/import', [ContactImportController::class, 'store'])->name('contacts.import.store');
 
     Route::post('/contacts/{contact}/messages', [MessageController::class, 'store'])->name('contacts.messages.store');
+
+    Route::get('/messages', [MessageLogController::class, 'index'])->name('messages.index');
 
     Route::get('/settings', [SettingsController::class, 'edit'])->name('settings.edit');
     Route::put('/settings', [SettingsController::class, 'update'])->name('settings.update');
